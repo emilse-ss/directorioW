@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Directorio de mi artista favorita: Wallice.Produce combinaciones y playlists..",
   "main": "index.js",
-"scripts": {
+  "scripts": {
   "build": "tsc",
   "start": "node dist/index.js",
   "dev": "tsc --watch",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/emilse-ss/directorioW/issues"
   },
-  "homepage": "https://github.com/emilse-ss/directorioW#readme"
+  "homepage": "https://github.com/emilse-ss/directorioW#readme",
+  "dependencies": {
+    "typescript": "^7.0.2"
+  }
 }
