@@ -1,14 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ordenarPorRareza = ordenarPorRareza;
-exports.reproducirPlaylist = reproducirPlaylist;
-exports.fusionarCanciones = fusionarCanciones;
-exports.generarPlaylistPorEstado = generarPlaylistPorEstado;
-exports.filtrarCanciones = filtrarCanciones;
 // ---------------------------------------------------------------------
 // ordenarPorRareza — orden superior + destructuring
 // ---------------------------------------------------------------------
-function ordenarPorRareza(lista) {
+export function ordenarPorRareza(lista) {
     const prioridad = {
         single: 1,
         "b-side": 2,
@@ -27,7 +20,7 @@ function ordenarPorRareza(lista) {
 function esperar(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
-async function reproducirPlaylist(playlist, alReproducir) {
+export async function reproducirPlaylist(playlist, alReproducir) {
     const resultados = [];
     for (const cancion of playlist) {
         try {
@@ -47,7 +40,7 @@ async function reproducirPlaylist(playlist, alReproducir) {
 // ---------------------------------------------------------------------
 // fusionarCanciones — rest + spread
 // ---------------------------------------------------------------------
-function fusionarCanciones(tituloNuevo, ...pistas) {
+export function fusionarCanciones(tituloNuevo, ...pistas) {
     const bpmPromedio = Math.round(pistas.reduce((suma, p) => suma + p.bpm, 0) / pistas.length);
     const energiaMax = Math.max(...pistas.map((p) => p.energia));
     const generosUnicos = [...new Set(pistas.map((p) => p.genero))];
@@ -64,7 +57,7 @@ function fusionarCanciones(tituloNuevo, ...pistas) {
 // ---------------------------------------------------------------------
 // generarPlaylistPorEstado — filter/sort/slice/map
 // ---------------------------------------------------------------------
-function generarPlaylistPorEstado(lista, estado, limite = 5) {
+export function generarPlaylistPorEstado(lista, estado, limite = 5) {
     return lista
         .filter((c) => c.estadoDeAnimo === estado)
         .sort((a, b) => b.energia - a.energia)
@@ -74,7 +67,6 @@ function generarPlaylistPorEstado(lista, estado, limite = 5) {
 // ---------------------------------------------------------------------
 // filtrarCanciones — para orden superior
 // ---------------------------------------------------------------------
-function filtrarCanciones(lista, criterio) {
+export function filtrarCanciones(lista, criterio) {
     return lista.filter(criterio);
 }
-//# sourceMappingURL=directorio.js.map

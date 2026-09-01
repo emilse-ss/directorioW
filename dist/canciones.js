@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.canciones = void 0;
-exports.canciones = [
+export const canciones = [
     {
         titulo: "Punching Bag",
         duracionSegundos: 189,
@@ -93,4 +90,3 @@ exports.canciones = [
         rareza: "b-side",
     },
 ];
-//# sourceMappingURL=canciones.js.map
